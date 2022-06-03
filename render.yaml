@@ -1,23 +1,23 @@
 services:
 
 - type: web
-	name: render-strapi-backend
-	env: node
-	plan: free
+  name: render-strapi-backend
+  env: node
+  plan: free
 
-	# Update the following line with your Strapi GitHub repo
-	repo: https://github.com/PaulBratslavsky/render-strapi-backend
-	branch: main
-	buildCommand: yarn install && yarn build
-	startCommand: yarn start
-	healthCheckPath: /_health
-	envVars:
+  # Update the following line with your Strapi GitHub repo
+  repo: https://github.com/PaulBratslavsky/render-strapi-backend
+  branch: main
+  buildCommand: yarn install && yarn build
+  startCommand: yarn start
+  healthCheckPath: /_health
+  envVars:
 
 - key: NODE_VERSION
-	value: ~16.0.0
-	
+  value: ~16.0.0
+  
 - key: NODE_ENV
-	value: production
+  value: production
 
 - key: CLOUDINARY_NAME
   sync: false
@@ -27,23 +27,23 @@ services:
 
 - key: CLOUDINARY_SECRET
   sync: false
-	
+  
 - key: DATABASE_URL
-	fromDatabase:
-	name: strapi-new-db
-	property: connectionString
-	
+  fromDatabase:
+  name: strapi-new-db
+  property: connectionString
+  
 - key: JWT_SECRET
-	generateValue: true
+  generateValue: true
 
 - key: ADMIN_JWT_SECRET
-	generateValue: true
+  generateValue: true
 
 - key: API_TOKEN_SALT
-	generateValue: true
+  generateValue: true
 
 - key: APP_KEYS
-	generateValue: true
+  generateValue: true
 
 databases:
 - name: strapi-new-db
