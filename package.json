@@ -1,0 +1,33 @@
+{
+  "name": "render-backend",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/plugin-i18n": "4.1.12",
+    "@strapi/plugin-users-permissions": "4.1.12",
+    "@strapi/provider-upload-cloudinary": "^4.1.12",
+    "@strapi/strapi": "4.1.12",
+    "better-sqlite3": "7.4.6",
+    "pg": "^8.7.3",
+    "pg-connection-string": "^2.5.0"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "41e9c87e-9e4f-4670-8d43-49aeabc31016"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
