@@ -3,7 +3,6 @@ services:
     name: render-strapi-backend
     env: node
     plan: free
-
     # Update the following line with your Strapi GitHub repo
     repo: https://github.com/PaulBratslavsky/render-strapi-backend
     branch: main
@@ -11,39 +10,30 @@ services:
     startCommand: yarn start
     healthCheckPath: /_health
     envVars:
-
   - key: NODE_VERSION
     value: ~16.0.0
-
   - key: NODE_ENV
     value: production
-
   - key: CLOUDINARY_NAME
     sync: false
-
   - key: CLOUDINARY_KEY
     sync: false
-
   - key: CLOUDINARY_SECRET
     sync: false
-
   - key: DATABASE_URL
     fromDatabase:
-    name: strapi-new-db
-    property: connectionString
-
+      name: strapi-new-db
+      property: connectionString
   - key: JWT_SECRET
     generateValue: true
-
   - key: ADMIN_JWT_SECRET
     generateValue: true
-
   - key: API_TOKEN_SALT
     generateValue: true
-
   - key: APP_KEYS
     generateValue: true
 
 databases:
   - name: strapi-new-db
 plan: free # This database will expire 90 days after creation
+
